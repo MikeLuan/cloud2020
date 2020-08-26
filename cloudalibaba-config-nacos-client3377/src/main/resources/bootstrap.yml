@@ -17,6 +17,8 @@ spring:
       config:
         server-addr: localhost:8848
         file-extension: yaml
+        namespace: bc5eb58f-c3f4-457a-b471-3772b602f704
+        group: DEV_GROUP
 
 mybatis:
   mapper-locations: mapper/*.xml
