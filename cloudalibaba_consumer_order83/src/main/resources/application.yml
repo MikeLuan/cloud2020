@@ -1,0 +1,24 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-consumer
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource         # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包  也可以org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://39.98.222.17:33060/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848  #配置nacos地址
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.datage.springcloud.entities   # 所有Entity别名类所在包
+
+#消费者将要去访问的微服务名称(注册成功进nacos的微服务提供者 )
+service-url:
+  nacos-user-service: http://nacos-payment-provider
